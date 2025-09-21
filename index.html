@@ -3,273 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maadi MUN</title>
+    <title>Maadi MUN - Model United Nations</title>
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        }
+        
+        body {
+            background-color: #f5f5f5;
             color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #2b5876);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #f5f7f9 0%, #e8ecf1 100%);
+            padding: 2rem 1rem;
         }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #3498db;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 0.95em;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+        
+        .team-section {
+            margin-bottom: 3rem;
+            background: white;
             border-radius: 10px;
-            overflow: hidden;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
-        thead tr {
-            background: linear-gradient(to right, #3498db, #2c3e50);
-            color: #ffffff;
-            text-align: left;
-            font-size: 1.05em;
+        
+        .team-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1a2a6c;
+            color: #1a2a6c;
         }
-        th, td {
-            padding: 14px 16px;
-            border-bottom: 1px solid #e1e5eb;
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
         }
-        tbody tr:nth-of-type(even) {
-            background-color: #f8fafc;
+        
+        .member-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 1.2rem;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        tbody tr:last-of-type {
-            border-bottom: 3px solid #3498db;
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-        tbody tr:hover {
-            background-color: #e1f0fa;
-            transition: background-color 0.3s ease;
+        
+        .member-card h3 {
+            color: #1a2a6c;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
-        .committee-header {
-            background: linear-gradient(to right, #2c3e50, #34495e);
-            color: white;
-            font-weight: 800;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        
+        .member-card p {
+            color: #2b5876;
+            font-weight: 500;
         }
-        .committee-header td {
-            padding: 16px;
-            border-bottom: none;
-        }
+        
         .head {
-            font-weight: bold;
-            color: #2980b9;
+            border-top: 4px solid #1a2a6c;
         }
-        .vice {
-            color: #5d6d7e;
-            font-weight: 600;
+        
+        .vice-head {
+            border-top: 4px solid #2b5876;
         }
-        .school {
-            font-style: italic;
-            color: #566573;
+        
+        footer {
+            background: #1a2a6c;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
         }
+        
         @media (max-width: 768px) {
-            table {
-                display: block;
-                overflow-x: auto;
+            .team-members {
+                gap: 1rem;
             }
-            th, td {
-                padding: 10px 12px;
+            
+            .member-card {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <h1>Maadi MUN</h1>
+    <header>
+        <h1>Maadi MUN</h1>
+        <p>Model United Nations - Organizational Team and Committee</p>
+    </header>
     
-    <table>
-        <thead>
-            <tr>
-                <th>School</th>
-                <th>Name</th>
-                <th>Committee</th>
-                <th>Position</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Content Writing Committee -->
-            <tr class="committee-header">
-                <td colspan="5">Content Writing Committee</td>
-            </tr>
-            <tr>
-                <td class="school">STEM High School for Boys - 6 October</td>
-                <td>Adham Mohamed Sayed Ahmed</td>
-                <td>Content Writing</td>
-                <td class="head">Head</td>
-                <td>adhammohamed17709@gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School</td>
-                <td>Saja Nashaat</td>
-                <td>Content Writing</td>
-                <td class="vice">Vice Head</td>
-                <td>sajaalhassany55@gmail.com</td>
-            </tr>
-            
-            <!-- HR Committee -->
-            <tr class="committee-header">
-                <td colspan="5">HR Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Obour STEM school</td>
-                <td>Asmaa Hassan Etaim</td>
-                <td>HR</td>
-                <td class="vice">Vice</td>
-                <td>asmaaetaim037@gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">STEM October 11th district school</td>
-                <td>Mawda Osama Maher Abbas Alqssas</td>
-                <td>HR</td>
-                <td class="head">Head</td>
-                <td>mawdaosama68gmail.com</td>
-            </tr>
-            
-            <!-- Marketing Committee -->
-            <tr class="committee-header">
-                <td colspan="5">Marketing Committee</td>
-            </tr>
-            <tr>
-                <td class="school">STEM October 11th District High School</td>
-                <td>Alya Ahmed Mohamed Etwan</td>
-                <td>Marketing</td>
-                <td class="vice">Vice</td>
-                <td>alyaelwan558gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">Stem Fayoum</td>
-                <td>Yousseif Mahmoud Salah mohammed</td>
-                <td>Marketing</td>
-                <td class="head">Head</td>
-                <td>yousseifindx58gmail.com</td>
-            </tr>
-            
-            <!-- OC Committee -->
-            <tr class="committee-header">
-                <td colspan="5">OC Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM school</td>
-                <td>Jana Mohammed Mohammed abd el diam</td>
-                <td>OC</td>
-                <td class="vice">Vice</td>
-                <td>jana@mohamed532@gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">STEM Sharkya</td>
-                <td>Mohamed Elsayed Mohamed Fahmy</td>
-                <td>OC</td>
-                <td class="head">Head</td>
-                <td>e.mohamedelsayed2030@gmail.com</td>
-            </tr>
-            
-            <!-- PR Committee -->
-            <tr class="committee-header">
-                <td colspan="5">PR Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School for Girls</td>
-                <td>Nour Mohamed Abosrea Mohamed</td>
-                <td>PR</td>
-                <td class="vice">Vice</td>
-                <td>nourmohamed117816@gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School For Girls</td>
-                <td>Renad Adel</td>
-                <td>PR</td>
-                <td class="head">Head</td>
-                <td>renadadella8gmail.com</td>
-            </tr>
-            
-            <!-- Research Committee -->
-            <tr class="committee-header">
-                <td colspan="5">Research Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School for girls</td>
-                <td>Gehad Ashraf Fathy Taha</td>
-                <td>Research</td>
-                <td class="head">Head</td>
-                <td>gehadashraf179@gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">The Red Sea STEM</td>
-                <td>Shahd Nabil Abd Elfattah</td>
-                <td>Research</td>
-                <td class="vice">Vice</td>
-                <td>shahdnab112348@gmail.com</td>
-            </tr>
-            
-            <!-- IT Committee -->
-            <tr class="committee-header">
-                <td colspan="5">IT Committee</td>
-            </tr>
-            <tr>
-                <td class="school">STEM Assiut</td>
-                <td>Abanoob George</td>
-                <td>IT</td>
-                <td class="head">Head</td>
-                <td>bebogeorge2008@gmail.com</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School</td>
-                <td>Raghad Mohamed</td>
-                <td>IT</td>
-                <td class="vice">Vice</td>
-                <td>ragdmohamed@example.com</td>
-            </tr>
-            
-            <!-- Graphics Committee -->
-            <tr class="committee-header">
-                <td colspan="5">Graphics Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School</td>
-                <td>Ganna Ahmad</td>
-                <td>Graphics</td>
-                <td class="head">Head</td>
-                <td>gannaahmad@example.com</td>
-            </tr>
-            
-            <!-- Video Editing Committee -->
-            <tr class="committee-header">
-                <td colspan="5">Video Editing Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School</td>
-                <td>Joumana Mohamed</td>
-                <td>Video Editing</td>
-                <td class="head">Head</td>
-                <td>Jou.moh.fathy@gmail.com</td>
-            </tr>
-            
-            <!-- Graphics & Video Editing Committee -->
-            <tr class="committee-header">
-                <td colspan="5">Graphics & Video Editing Committee</td>
-            </tr>
-            <tr>
-                <td class="school">Maadi STEM School</td>
-                <td>Samma Waleed</td>
-                <td>Graphics & Video Editing</td>
-                <td class="vice">Vice</td>
-                <td>sammawalidaly@gmail.com</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <section class="team-section">
+            <div class="team-header">
+                <h2>Content Writing Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Adham Mohammed</h3>
+                    <p>Head of Content</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Saja</h3>
+                    <p>Vice Head of Content</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>IT Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Abanob George</h3>
+                    <p>Head of IT</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Raghd Ahmad</h3>
+                    <p>Vice Head of IT</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>PR Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Nour Mohamed</h3>
+                    <p>Head of PR</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Renad Adel</h3>
+                    <p>Vice Head of PR</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>HR Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Malak Ezeldien</h3>
+                    <p>Head of HR</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Shahd</h3>
+                    <p>Vice Head of HR</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Asmaa</h3>
+                    <p>Vice Head of HR</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>Research Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Gehad Ashraf</h3>
+                    <p>Head of Research</p>
+                </div>
+                <div class="member-card head">
+                    <h3>Batoul Elsyaed</h3>
+                    <p>Head of Research</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>Multimedia Production Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Ganna Ahmad</h3>
+                    <p>Head of Graphic Design</p>
+                </div>
+                <div class="member-card head">
+                    <h3>Jomana</h3>
+                    <p>Head of Video Editing</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Samma Walid</h3>
+                    <p>Vice Head of Graphic & Video</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>Marketing Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Sarah Mohamed</h3>
+                    <p>Head of Marketing</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Alya Ahmad</h3>
+                    <p>Vice Head of Marketing</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="team-section">
+            <div class="team-header">
+                <h2>OC Logistics Team</h2>
+            </div>
+            <div class="team-members">
+                <div class="member-card head">
+                    <h3>Mohammed Elsayed</h3>
+                    <p>Head of OC Logistics</p>
+                </div>
+                <div class="member-card vice-head">
+                    <h3>Jana Mohammed</h3>
+                    <p>Vice Head of OC Logistics</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Maadi MUN &copy; 2025. All rights reserved.</p>
+    </footer>
 </body>
 </html>
